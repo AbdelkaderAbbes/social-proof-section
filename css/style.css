@@ -1,0 +1,267 @@
+:root {
+  --f-400: 400;
+  --f-500: 500;
+  --f-700: 700;
+  --dark-magneta: hsl(300, 43%, 22%);
+  --soft-pink: hsl(333, 80%, 67%);
+  --dark-gray: hsl(303, 10%, 53%);
+  --light-gray: hsl(300, 24%, 96%);
+  --white: hsl(0, 0%, 100%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Spartan", sans-serif;
+  font-size: 15px;
+  background: var(--white);
+  color: var(--dark-gray);
+  font-weight: var(--f-500);
+}
+
+.flex {
+  display: flex;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Media queries */
+
+/* small screen */
+
+@media (max-width: 576px) {
+  .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* sedium screen */
+@media (min-width: 982px) {
+  .container {
+    width: 950px;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+/* large screen */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* content styling start */
+
+.content .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  column-gap: 20px;
+}
+
+@media (max-width: 1199px) {
+  .content .container {
+    grid-template-columns: 1fr;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+@media (max-width: 1199px) {
+  .feedback {
+    grid-row: 3;
+  }
+}
+
+@media (max-width: 1199px) {
+  .rating {
+    grid-row: 2;
+  }
+}
+
+/* heading start */
+
+@media (max-width: 1199px) {
+  .heading {
+    text-align: center;
+  }
+}
+
+.heading h1 {
+  margin: 0;
+  font-size: 3.3125rem;
+  color: var(--dark-magneta);
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .heading h1 {
+    font-size: 2.3125rem;
+  }
+}
+
+.heading p {
+  line-height: 1.7;
+}
+
+/* heading end */
+
+/* rating start */
+
+/* @media (max-width: 1199px) {
+  .rating {
+    grid-template-rows: 2;
+  }
+} */
+
+.rating > div {
+  display: flex;
+  padding: 1.25rem 2rem;
+  background: var(--light-gray);
+  border-radius: 10px;
+  width: 445px;
+}
+
+@media (max-width: 576px) {
+  .rating > div {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1199px) {
+  .rating {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .rating {
+    max-width: 100%;
+  }
+}
+
+.rating > div:nth-child(2) {
+  transform: translateX(3rem);
+}
+
+@media (max-width: 1199px) {
+  .rating > div:nth-child(2) {
+    transform: translateX(0);
+  }
+}
+
+.rating > div:last-child {
+  transform: translateX(6rem);
+}
+
+@media (max-width: 1199px) {
+  .rating > div:last-child {
+    transform: translateX(0);
+  }
+}
+
+.rating > div p {
+  margin-left: 2rem;
+}
+
+.rating > div:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+/* rating end */
+
+/* feedback start */
+.feedback {
+  /* justify-content: space-between; */
+  grid-column: span 2;
+  margin-top: 2rem;
+}
+
+@media (max-width: 1199px) {
+  .feedback {
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.feedback > div {
+  flex-direction: column;
+  background: var(--dark-magneta);
+  height: fit-content;
+  padding: 2rem;
+  width: fit-content;
+  width: 350px;
+  border-radius: 10px;
+  color: var(--light-gray);
+  line-height: 1.7;
+}
+
+@media (max-width: 576px) {
+  .feedback > div {
+    width: 300px;
+  }
+}
+
+.feedback > div p {
+  font-weight: var(--f-400);
+}
+
+.feedback > div:not(:last-child) {
+  margin-right: 2rem;
+}
+
+@media (max-width: 1199px) {
+  .feedback > div:not(:last-child) {
+    margin-right: 0;
+  }
+}
+
+.feedback > div:nth-child(2) {
+  transform: translateY(1rem);
+}
+
+.feedback > div:last-child {
+  transform: translateY(2rem);
+}
+
+.feedback > div .box-head {
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.feedback > div img {
+  border-radius: 50%;
+  width: 42px;
+  margin-right: 1.375rem;
+}
+
+.feedback > div .box-head span {
+  color: var(--soft-pink);
+}
+
+/* feedback end */
+
+/* content styling end */
